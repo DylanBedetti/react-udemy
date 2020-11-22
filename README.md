@@ -9,4 +9,11 @@
 | find applications on different ports | `sudo lsof -i -P -n | grep LISTEN`|
 | [Viewing number of inotify file watchers](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details) | `cat /proc/sys/fs/inotify/max_user_watches`|
 | Updating number of inotify file watchers | `sudo sysctl fs.inotify.max_user_watches=524288; sudo sysctl -p`|
+| How to open file / folder in VScode editor | `code -r something.php` |
+| Installing zsh | `sudo apt install -y zsh; sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"` |
+| enabling vscode to use defualt zsh | update `"terminal.integrated.shell.linux": "/bin/zsh"`|
 
+# TO DO
+
+- learn about prettierrc file configu
+- how to debug a file?
