@@ -1,0 +1,12 @@
+.notification {
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(214, 194, 175, 0.87);
+  height: 100vh;
+}
+
+/* .warning {
+  width: 50%;
+  height: auto;
+  margin: auto;
+} */
