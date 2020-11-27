@@ -13,7 +13,6 @@ class App extends React.Component {
       },
     });
 
-    console.log(response);
     this.setState({ images: response.data.results });
   };
 
