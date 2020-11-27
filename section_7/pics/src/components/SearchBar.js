@@ -19,6 +19,7 @@ class SearchBar extends react.Component {
               placeholder="Search..."
               onChange={(e) => this.setState({ term: e.target.value })} //not no brackets!
               value={this.state.term}
+              autoFocus
             ></input>
           </div>
         </form>
