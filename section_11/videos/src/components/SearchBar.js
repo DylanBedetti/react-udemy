@@ -12,9 +12,7 @@ class SearchBar extends React.Component {
   };
 
   onSearchChange = (event) => {
-    console.log(event);
     this.props.onTermSubmit(this.state.term);
-    // TODO: make sure we call callback from parent component
   };
 
   render() {
@@ -25,6 +23,8 @@ class SearchBar extends React.Component {
         onChange={this.onInputChange}
         style={{
           width: "80%",
+          minWidth: "400px",
+          maxWidth: "800px",
           padding: "30px",
         }}
         value={this.state.term}

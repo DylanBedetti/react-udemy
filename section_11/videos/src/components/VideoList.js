@@ -1,34 +1,42 @@
 import React from "react";
-// import VideoItem from "./VideoItem";
-import { List, Avatar } from "antd";
+import Loading from "./LoadingSpinner";
+import { List, Avatar, Card } from "antd";
 
-const VideoList = ({ videos }) => {
-  // const renderedList = videos.map((video) => {
-  //   return <VideoItem video={video} key={video.id.videoId} />;
-  // });
-
+const VideoList = ({ videos, onVideoSelect }) => {
   return (
-    <List
-      itemLayout="horizontal"
-      dataSource={videos}
-      size="large"
-      locale={{ emptyText: "No Videos..." }} // WHY DOUBLE BRACKETS>
-      renderItem={(item) => (
-        <List.Item>
-          <List.Item.Meta
-            avatar={
-              <Avatar
-                shape="square"
-                size={{ xxl: 100 }}
-                src={item.snippet.thumbnails.default.url}
-              />
-            }
-            title={item.snippet.title}
-            // description={item.snippet.description}
-          />
-        </List.Item>
-      )}
-    />
+    <Card style={{ margin: "10px" }}>
+      <List
+        itemLayout="horizontal"
+        dataSource={videos}
+        size="large"
+        locale={{ emptyText: <Loading /> }}
+        renderItem={(item) => (
+          <List.Item
+            style={{ cursor: "pointer" }}
+            onClick={() => onVideoSelect(item)} // this smort
+          >
+            <List.Item.Meta
+              avatar={
+                <Avatar
+                  shape="square"
+                  size={{
+                    xs: 40,
+                    sm: 100,
+                    md: 100,
+                    lg: 100,
+                    xl: 100,
+                    xxl: 100,
+                  }} //better way of doing this?
+                  src={item.snippet.thumbnails.default.url}
+                  alt={item.snippet.title}
+                />
+              }
+              title={item.snippet.title}
+            />
+          </List.Item>
+        )}
+      />
+    </Card>
   );
 };
 
