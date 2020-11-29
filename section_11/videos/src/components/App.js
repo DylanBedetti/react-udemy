@@ -6,7 +6,7 @@ import VideoDetail from "./VideoDetail";
 
 import { Layout } from "antd";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };

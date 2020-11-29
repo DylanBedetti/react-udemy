@@ -14,7 +14,7 @@ const VideoDetail = ({ video }) => {
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
   return (
-    <Card style={{ margin: "10px", maxWidth: "1300px" }}>
+    <Card style={{ margin: "10px", maxWidth: "800px" }}>
       <div
         style={{
           position: "relative",
