@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Accordion from "./Accordion";
 import Search from "./Search";
 import Dropdown from "./Dropdown";
+import Translate from "./Translate";
+import Route from "./Route";
+import Header from "./Header";
 
 const items = [
   {
@@ -38,13 +41,24 @@ const App = () => {
 
   return (
     <div>
-      {/* <Accordion items={items} /> */}
-      {/* <Search/> */}
-      <Dropdown
-        selected={selected}
-        onSelectedChange={setSelected} //convention onSomethingChange
-        options={options}
-      />
+      <Header />
+      <Route path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />;
+      </Route>
+      <Route path="/dropdown">
+        <Dropdown
+          selected={selected}
+          onSelectedChange={setSelected}
+          options={options}
+          label="Select a Colour"
+        />
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
     </div>
   );
 };
