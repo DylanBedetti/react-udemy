@@ -12,8 +12,11 @@ const Link = ({ className, href, children }) => {
     window.dispatchEvent(navEvent);
   };
 
+  const classNameActive =
+    window.location.pathname === href ? className + " active" : className;
+
   return (
-    <a onClick={onClick} className={className} href={href}>
+    <a onClick={onClick} className={classNameActive} href={href}>
       {children}
     </a>
   );
